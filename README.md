@@ -67,3 +67,8 @@ child: FutureBuilder(
       .loadString("assets/appointments.json"),
 ),
 ```
+**[View document in Syncfusion Flutter Knowledge base](https://www.syncfusion.com/kb/11466/how-to-load-the-json-data-offline-for-the-flutter-event-calendar-sfcalendar-appointments)**
+
+**Screenshots**
+
+![json data](http://www.syncfusion.com/uploads/user/kb/flut/flut-798/flut-798_img1.png)
