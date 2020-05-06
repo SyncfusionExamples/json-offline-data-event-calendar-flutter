@@ -71,4 +71,4 @@ child: FutureBuilder(
 
 **Screenshots**
 
-<img alt="json data"  src="http://www.syncfusion.com/uploads/user/kb/flut/flut-798/flut-798_img1.png" width="250" height="500" />|
+<img alt="json data"  src="http://www.syncfusion.com/uploads/user/kb/flut/flut-798/flut-798_img1.png" width="300" height="500" />|
