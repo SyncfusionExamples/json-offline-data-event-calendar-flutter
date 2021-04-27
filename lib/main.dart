@@ -33,8 +33,8 @@ class MyAppPageState extends State<MyAppPage> {
       body: Center(
         child: FutureBuilder(
           builder: (context, snapshot) {
-           var showData = json.decode(snapshot.data.toString());
-            List<Meeting> collection;
+            var showData = json.decode(snapshot.data.toString());
+            List<Meeting>? collection;
             if (showData != null) {
               for (int i = 0; i < showData.length; i++) {
                 collection ??= <Meeting>[];
@@ -50,10 +50,10 @@ class MyAppPageState extends State<MyAppPage> {
             }
             return Container(
                 child: SfCalendar(
-              view: CalendarView.month,
-              dataSource: _getCalendarDataSource(collection),
-              monthViewSettings: MonthViewSettings(showAgenda: true),
-            ));
+                  view: CalendarView.month,
+                  dataSource: _getCalendarDataSource(collection),
+                  monthViewSettings: MonthViewSettings(showAgenda: true),
+                ));
           },
           future: DefaultAssetBundle.of(context)
               .loadString("assets/appointment.json"),
@@ -62,7 +62,7 @@ class MyAppPageState extends State<MyAppPage> {
     );
   }
 
-    MeetingDataSource _getCalendarDataSource([List<Meeting> collection]) {
+  MeetingDataSource _getCalendarDataSource([List<Meeting>? collection]) {
     List<Meeting> meetings = collection ?? <Meeting>[];
     return MeetingDataSource(meetings);
   }
@@ -75,36 +75,36 @@ class MeetingDataSource extends CalendarDataSource {
 
   @override
   DateTime getStartTime(int index) {
-    return appointments[index].from;
+    return appointments![index].from;
   }
 
   @override
   DateTime getEndTime(int index) {
-    return appointments[index].to;
+    return appointments![index].to;
   }
 
   @override
   bool isAllDay(int index) {
-    return appointments[index].isAllDay;
+    return appointments![index].isAllDay;
   }
 
   @override
   String getSubject(int index) {
-    return appointments[index].eventName;
+    return appointments![index].eventName;
   }
 
   @override
   Color getColor(int index) {
-    return appointments[index].background;
+    return appointments![index].background;
   }
 }
 
 class Meeting {
   Meeting({this.eventName, this.from, this.to, this.background, this.isAllDay});
 
-  String eventName;
-  DateTime from;
-  DateTime to;
-  Color background;
-  bool isAllDay;
+  String? eventName;
+  DateTime? from;
+  DateTime? to;
+  Color? background;
+  bool? isAllDay;
 }
