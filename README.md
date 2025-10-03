@@ -1,4 +1,4 @@
-# Flutter Calendar load JSON appointment 
+# Flutter Calendar appointments from local JSON
 
 
 This repository contains a sample that demonstrates how to load offline JSON appointments into the Syncfusion® Calendar package.
